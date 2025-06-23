@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Noticias | Periódico Digital</title>
+  <link rel="stylesheet" href="estilos.css">
+  <style>
+    .filtros {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .filtros button {
+      margin: 5px;
+      padding: 8px 16px;
+      background-color: #00509e;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .filtros button:hover {
+      background-color: #003366;
+    }
+
+    .noticia {
+      display: none;
+    }
+
+    .noticia.visible {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Noticias del Periódico Digital</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="noticias.html">Noticias</a>
+    <a href="contacto.html">Contacto</a>
+    <a href="acerca.html">Acerca de</a>
+  </nav>
+
+  <div class="filtros">
+    <button onclick="filtrar('todas')">Todas</button>
+    <button onclick="filtrar('clima')">Clima</button>
+    <button onclick="filtrar('educacion')">Educación</button>
+    <button onclick="filtrar('tecnologia')">Tecnología</button>
+  </div>
+
+ <div class="container" id="noticias">
+
+  <div class="noticia clima visible">
+    <h2>Vientos fuertes esta semana</h2>
+    <img src="imagenes/viento.jpg" alt="Viento en zona montañosa">
+    <p>Actualmente, hay alertas meteorológicas por fuertes vientos en varias regiones. El Servicio Meteorológico Nacional ha emitido una alerta amarilla debido a la presencia de vientos fuertes y ráfagas intensas que afectarán la región en las próximas horas. Se considera que los vientos son fuertes cuando alcanzan velocidades de entre 39 y 49 km/h. Es importante estar atento a las recomendaciones de seguridad durante estos eventos climáticos.</p>
+  </div>
+
+  <div class="noticia educacion visible">
+    <h2>Evaluación de la unidad</h2>
+    <img src="imagenes/evaluacion.jpg" alt="Estudiantes tomando examen">
+    <p>Las actividades serán evaluadas semanalmente. Nota mínima: 7.0</p>
+  </div>
+
+  <div class="noticia tecnologia visible">
+    <h2>La tecnología transforma el aula</h2>
+    <img src="imagenes/tecnologia.jpg" alt="Pantalla digital en salón de clases">
+    <p>Se implementan herramientas digitales para mejorar el aprendizaje.</p>
+  </div>
+
+  <div class="noticia educacion visible">
+    <h2>Metodologías UX en clase</h2>
+    <img src="imagenes/ux.jpg" alt="Esquema UX en pizarra">
+    <p>Los estudiantes aprenderán UX con prácticas interactivas.</p>
+  </div>
+
+  <div class="noticia clima visible">
+    <h2>Alerta por lluvias</h2>
+    <img src="imagenes/lluvia.jpg" alt="Lluvia intensa en ciudad">
+    <p>Las autoridades señalaron que las lluvias se deben a la cercanía de la Zona de Convergencia Intertropical, así como a la influencia de la depresión tropical 5-E y una onda tropical.
+
+La Dirección General de Protección Civil elevó a amarilla la alerta en El Salvador a causa de las lluvias intensas que azotan el país y que continuarán esta semana, informó la misma institución este lunes por la noche.
+
+La medida se basa en el Informe Especial N° 2 de la Dirección General del Observatorio de Amenazas del Ministerio de Medio Ambiente y Recursos Naturales, que pronostica un aumento de lluvias y tormentas fuertes que afectarán el territorio nacional en los próximos días.
+
+Este lunes por la tarde se formó la depresión tropical 5-E con probabilidades de crecer a tormenta tropical y posteriormente a huracán, informó el Centro Nacional de Huracanes. Este sistema afectará a El Salvador, Guatemala y México.
+
+"Además, una onda tropical se acerca hacia el Caribe nicaragüense, lo que también influirá en las lluvias. Estas condiciones generarán chubascos y tormentas con intensidad variable, a nivel nacional y con énfasis en la zona costera desde hoy, lunes 16 de junio, hasta miércoles 18; el resto de la semana las lluvias tendrán un comportamiento más habitual", informó Protección Civil.
+
+Ante la alerta vigente, Protección Civil informó que "se deben activar las Comisiones Departamentales y Municipales de todo el país".
+
+Las autoridades indicaron que es necesario vigilar las áreas susceptibles a inundaciones o anegamientos, deslizamientos o deslaves por la acumulación de lluvias e identificar las zonas de peligro por la caída de ramas, árboles, vallas publicitarias, postes del tendido eléctrico o de comunicación por los vientos asociados a tormentas, tomando las medidas pertinentes para su intervención.
+
+Mientras que la población debe tener precaución al transitar y evitar cruzar ríos, quebradas o cualquier corriente de agua que se generen durante lluvias y posterior a ellas, debido a la probabilidad de arrastre. Asimismo, abstenerse de conducir por la noche, debido a la poca visibilidad que se presenta durante una tormenta y la condición lisa de las carreteras.
+
+Y en la costa se recomienda ser precavidos por el oleaje más rápido y alto, el cual incrementará la rapidez de las corrientes de retorno y la altura de las olas en la zona de rompiente.
+
+En caso de algún inconveniente, se puede contactar con el Centro de Operaciones de Emergencias llamando al 2281-0888.</p>
+  </div>
+
+  <div class="noticia tecnologia visible">
+    <h2>Nueva biblioteca digital</h2>
+    <img src="imagenes/biblioteca.jpg" alt="Pantalla mostrando biblioteca virtual">
+    <p>Acceso en línea a libros y revistas académicas 24/7.</p>
+  </div>
+
+</div>
+
+
+  <footer>
+    <p>&copy; 2025 Periódico Digital Web | viaudu@gmail.com</p>
+  </footer>
+
+  <script>
+    function filtrar(categoria) {
+      const noticias = document.querySelectorAll('.noticia');
+      noticias.forEach(noticia => {
+        if (categoria === 'todas' || noticia.classList.contains(categoria)) {
+          noticia.classList.add('visible');
+        } else {
+          noticia.classList.remove('visible');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
