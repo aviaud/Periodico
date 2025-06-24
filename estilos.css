@@ -15,22 +15,24 @@ header {
 }
 
 nav {
-  background-color: #00509e;
   display: flex;
   justify-content: center;
-  gap: 20px;
-  padding: 10px 0;
+  background-color: #00509e;
+  flex-wrap: wrap;
 }
 
 nav a {
-  color: #fff;
+  color: white;
+  padding: 16px 24px; /* más espacio alrededor */
   text-decoration: none;
+  font-size: 20px;     /* tamaño de fuente aumentado */
   font-weight: bold;
 }
 
 nav a:hover {
-  text-decoration: underline;
+  background-color: #003f7f;
 }
+
 
 .destacado {
   background-color: #ffefc2;
